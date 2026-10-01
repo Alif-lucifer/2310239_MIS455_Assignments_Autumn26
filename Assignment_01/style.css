@@ -237,7 +237,9 @@ p {
 
     border-radius: 8px;
 }
-
+.middle-card {
+    margin: 30px auto;
+}
 
 /* ------------------------------
    MOVIE PAGE
