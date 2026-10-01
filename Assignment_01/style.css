@@ -1,0 +1,358 @@
+/* ------------------------------
+   General Page Styling
+--------------------------------*/
+
+body {
+    margin: 0;
+    padding: 0;
+
+    background-color: #eaf6ff;
+
+    color: #222;
+
+    font-family: "Karla", sans-serif;
+}
+
+
+/* ------------------------------
+   Navigation Bar
+--------------------------------*/
+
+nav {
+    background-color: #2196f3;
+
+    color: white;
+
+    padding: 15px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+nav h2 {
+    font-family: "Noto Sans JP", sans-serif;
+
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    margin: 0;
+
+    padding: 0;
+
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* ------------------------------
+   Main Content
+--------------------------------*/
+
+main {
+    max-width: 1000px;
+
+    margin: 30px auto;
+
+    padding: 30px;
+
+    background-color: white;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+
+    border-radius: 10px;
+}
+
+h1 {
+    color: #1976d2;
+
+    text-align: center;
+
+    font-size: 32px;
+}
+
+h2 {
+    color: #1565c0;
+}
+
+p {
+    font-size: 17px;
+
+    line-height: 1.7;
+}
+
+
+/* ------------------------------
+   Main Images
+--------------------------------*/
+
+.main-image {
+    width: 300px;
+
+    height: 220px;
+
+    object-fit: contain;
+
+    display: block;
+
+    margin: 20px auto;
+
+    background-color: white;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/* ------------------------------
+   CHARACTER PAGE
+   FLEXBOX
+--------------------------------*/
+
+.character-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.character {
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 20px;
+
+    background-color: #e3f2fd;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.character img {
+    width: 250px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 8px;
+}
+
+.character-info {
+    flex: 1;
+}
+
+
+/* ------------------------------
+   Japanese Character Names
+--------------------------------*/
+
+.japanese {
+    font-family: "Noto Sans JP", sans-serif;
+
+    font-size: 26px;
+
+    color: #1565c0;
+}
+
+
+/* ------------------------------
+   English Character Names
+--------------------------------*/
+
+.english {
+    font-family: "Karla", sans-serif;
+
+    font-size: 24px;
+
+    color: #333;
+}
+
+
+/* ------------------------------
+   GADGET PAGE
+   CSS GRID
+--------------------------------*/
+
+.gadget-container {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+
+    margin-top: 30px;
+}
+
+.gadget-card {
+    padding: 20px;
+
+    background-color: #e3f2fd;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gadget-card img {
+    width: 250px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 8px;
+}
+
+
+/* ------------------------------
+   MOVIE PAGE
+--------------------------------*/
+
+.movie {
+    display: flex;
+
+    gap: 25px;
+
+    align-items: center;
+
+    margin: 25px 0;
+
+    padding: 20px;
+
+    background-color: #f1f8ff;
+
+    border-radius: 10px;
+
+    box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
+}
+
+.movie img {
+    width: 250px;
+
+    height: 180px;
+
+    object-fit: contain;
+
+    background-color: white;
+
+    border-radius: 8px;
+}
+
+
+/* ------------------------------
+   Footer
+--------------------------------*/
+
+footer {
+    text-align: center;
+
+    background-color: #1976d2;
+
+    color: white;
+
+    padding: 15px;
+
+    margin-top: 30px;
+}
+
+
+/* ------------------------------
+   Responsive Design
+--------------------------------*/
+
+@media (max-width: 700px) {
+
+    /* Navigation */
+
+    nav {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+
+    /* Character */
+
+    .character {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+    .character img {
+        width: 100%;
+
+        max-width: 250px;
+    }
+
+
+    /* Gadget */
+
+    .gadget-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Movie */
+
+    .movie {
+        flex-direction: column;
+
+        text-align: center;
+    }
+
+
+    /* Japanese name */
+
+    .japanese {
+        font-size: 22px;
+    }
+
+
+    /* English name */
+
+    .english {
+        font-size: 20px;
+    }
+}
