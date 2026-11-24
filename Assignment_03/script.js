@@ -1,1 +1,31 @@
+function connect() {
+    var searchTerm = document.getElementById("searchBox").value;
 
+    var url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${searchTerm}`;
+
+    fetch(url)
+    .then(res => res.json())
+    .then(data => display(data));
+}
+
+function display(data) {
+    var oldContent = document.getElementById("displayArea");
+    oldContent.textContent = "";
+
+    // if nothing is found, the API sends meals: null
+    if (data.meals == null) {
+        oldContent.textContent = "No meals found. Try another name.";
+        return;
+    }
+
+    // show only the first 5 results
+    for (var i = 1; i <= 5 && i <= data.meals.length; i++) {
+        var newDiv = document.createElement("div");
+        newDiv.classList.add("innerStyle");
+        newDiv.innerHTML = `<img src="${data.meals[i-1].strMealThumb}"> <br>
+                            Meal Title: <b>${data.meals[i-1].strMeal}</b> <br>
+                            Category: ${data.meals[i-1].strCategory} <br>
+                            Area: ${data.meals[i-1].strArea}`;
+        oldContent.appendChild(newDiv);
+    }
+}
