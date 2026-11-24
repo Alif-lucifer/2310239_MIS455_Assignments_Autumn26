@@ -1,31 +1,24 @@
-function connect() {
-    var searchTerm = document.getElementById("searchBox").value;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Meal Finder</h1>
 
-    var url = `https://www.themealdb.com/api.php${searchTerm}`;
+    <div class="searchArea">
+        Enter Meal/Food Title: <br>
+        <input id="searchBox" type="text" placeholder="e.g. chicken"> <br>
+        <button onclick="connect()">Search</button>
+    </div>
 
-    fetch(url)
-    .then(res => res.json())
-    .then(data => display(data));
-}
+    <div id="displayArea">
 
-function display(data) {
-    var oldContent = document.getElementById("displayArea");
-    oldContent.textContent = "";
+    </div>
 
-    // if nothing is found, the API sends meals: null
-    if (data.meals == null) {
-        oldContent.textContent = "No meals found. Try another name.";
-        return;
-    }
-
-    // show only the first 5 results
-    for (var i = 1; i <= 5 && i <= data.meals.length; i++) {
-        var newDiv = document.createElement("div");
-        newDiv.classList.add("innerStyle");
-        newDiv.innerHTML = `<img src="${data.meals[i-1].strMealThumb}"> <br>
-                            Meal Title: <b>${data.meals[i-1].strMeal}</b> <br>
-                            Category: ${data.meals[i-1].strCategory} <br>
-                            Area: ${data.meals[i-1].strArea}`;
-        oldContent.appendChild(newDiv);
-    }
-}
+    <script src="script.js"></script>
+</body>
+</html>
